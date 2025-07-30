@@ -1,3 +1,12 @@
+<img width="1468" height="1084" alt="image" src="https://github.com/user-attachments/assets/7048c6fb-3b63-4ca9-a648-c2fbe586a5ff" />
+
+<img width="1624" height="932" alt="image" src="https://github.com/user-attachments/assets/e4ba0787-72cd-4eb2-99eb-7a703b5b05bc" />
+
+<img width="1624" height="932" alt="image" src="https://github.com/user-attachments/assets/42dc2934-531e-4aed-9e8a-6b776599dcb8" />
+
+<img width="1624" height="932" alt="image" src="https://github.com/user-attachments/assets/95a76490-f2b9-4a87-94d0-404966de4f77" />
+
+
 # Users
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.6.
