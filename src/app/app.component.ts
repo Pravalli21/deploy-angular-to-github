@@ -3,9 +3,9 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet], // Only import RouterOutlet for routing
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Fixed typo: styleUrl -> styleUrls
 })
 export class AppComponent {
   title = 'users';
