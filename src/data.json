@@ -1,0 +1,42 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
+  ],
+  "users": [
+    {
+      "id": "e0cf",
+      "name": "valli",
+      "email": "dgurupravallika@gmail.com",
+      "phoneno": "4321567890",
+      "education": "B.E",
+      "age": 22
+    },
+    {
+      "id": "7714",
+      "name": "pooji",
+      "email": "pooji@gmail.com",
+      "phoneno": "3456732189"
+    },
+    {
+      "id": "6f10",
+      "name": "mounika",
+      "email": "moni@gmail.com",
+      "phoneno": "2314567890"
+    },
+    {
+      "id": "d3a4",
+      "name": "arunachalasiva",
+      "email": "arunachalasiva@gmail.com",
+      "phoneno": "9704321509"
+    }
+  ]
+}

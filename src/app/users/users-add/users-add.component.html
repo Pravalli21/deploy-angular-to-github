@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Add New User</h2>
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()" class="user-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" required />
+      <div
+        *ngIf="userForm.get('name')?.touched && userForm.get('name')?.invalid"
+        class="error"
+      >
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" required />
+      <div
+        *ngIf="userForm.get('email')?.touched && userForm.get('email')?.invalid"
+        class="error"
+      >
+        <span *ngIf="userForm.get('email')?.errors?.['required']"
+          >Email is required.</span
+        >
+        <span *ngIf="userForm.get('email')?.errors?.['email']"
+          >Invalid email format.</span
+        >
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phoneno">Phone Number:</label>
+      <input id="phoneno" type="text" formControlName="phoneno" required />
+      <div
+        *ngIf="
+          userForm.get('phoneno')?.touched && userForm.get('phoneno')?.invalid
+        "
+        class="error"
+      >
+        <span *ngIf="userForm.get('phoneno')?.errors?.['required']"
+          >Phone number is required.</span
+        >
+        <span *ngIf="userForm.get('phoneno')?.errors?.['pattern']"
+          >Phone number must be 10 digits.</span
+        >
+      </div>
+    </div>
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+  </form>
+
+  <div *ngIf="alertMessage" class="alert success">
+    {{ alertMessage }}
+  </div>
+
+  <div *ngIf="submittedData" class="submitted-data">
+    <h3>Submitted Data:</h3>
+    <p><strong>Name:</strong> {{ submittedData.name }}</p>
+    <p><strong>Email:</strong> {{ submittedData.email }}</p>
+    <p><strong>Phone Number:</strong> {{ submittedData.phoneno }}</p>
+  </div>
+</div>

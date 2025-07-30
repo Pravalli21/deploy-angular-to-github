@@ -1,0 +1,55 @@
+<div class="container">
+  <header class="header">
+    <h2>👥 Users Directory</h2>
+    <button class="add-button" routerLink="/users-add">
+      <i class="fas fa-plus"></i> Add New User
+    </button>
+    <button class="edit-button" routerLink="/users-edit">
+      <i class="fas fa-plus"></i> Edit User
+    </button>
+  </header>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>👤 Name</th>
+          <th>📧 Email</th>
+          <th>📱 Phone Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          @if (editingUser?.id === user.id) {
+          <td>
+            <form [formGroup]="editForm" (ngSubmit)="updateUser()">
+              <input formControlName="name" type="text" />
+              <input formControlName="email" type="email" />
+              <input formControlName="phoneno" type="text" />
+              <button type="submit" class="save-btn">Save</button>
+              <button
+                type="button"
+                class="cancel-btn"
+                (click)="editingUser = null"
+              >
+                Cancel
+              </button>
+            </form>
+          </td>
+          } @else {
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phoneno }}</td>
+          <td class="actions">
+            <button class="edit-btn" (click)="editUser(user)">Edit</button>
+            <button class="delete-btn" (click)="deleteUser(user.id!)">
+              Delete
+            </button>
+          </td>
+          }
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

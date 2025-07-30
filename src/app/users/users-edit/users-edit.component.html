@@ -1,0 +1,59 @@
+<div class="container">
+  <h2>Edit User</h2>
+  <form [formGroup]="editForm" (ngSubmit)="updateUser()" class="user-form">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" required />
+      <div
+        *ngIf="editForm.get('name')?.touched && editForm.get('name')?.invalid"
+        class="error"
+      >
+        Name is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input id="email" type="email" formControlName="email" required />
+      <div
+        *ngIf="editForm.get('email')?.touched && editForm.get('email')?.invalid"
+        class="error"
+      >
+        <span *ngIf="editForm.get('email')?.errors?.['required']">
+          Email is required.
+        </span>
+        <span *ngIf="editForm.get('email')?.errors?.['email']">
+          Invalid email format.
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="phoneno">Phone Number:</label>
+      <input id="phoneno" type="text" formControlName="phoneno" required />
+      <div
+        *ngIf="
+          editForm.get('phoneno')?.touched && editForm.get('phoneno')?.invalid
+        "
+        class="error"
+      >
+        <span *ngIf="editForm.get('phoneno')?.errors?.['required']">
+          Phone number is required.
+        </span>
+        <span *ngIf="editForm.get('phoneno')?.errors?.['pattern']">
+          Phone number must be 10 digits.
+        </span>
+      </div>
+    </div>
+    <button type="submit" [disabled]="editForm.invalid">Update</button>
+  </form>
+
+  <div *ngIf="alertMessage" class="alert success">
+    {{ alertMessage }}
+  </div>
+
+  <div *ngIf="updatedData" class="submitted-data">
+    <h3>Submitted Data:</h3>
+    <p><strong>Name:</strong> {{ updatedData.name }}</p>
+    <p><strong>Email:</strong> {{ updatedData.email }}</p>
+    <p><strong>Phone Number:</strong> {{ updatedData.phoneno }}</p>
+  </div>
+</div>
